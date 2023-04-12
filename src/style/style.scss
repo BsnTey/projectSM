@@ -1,0 +1,68 @@
+@font-face {
+  font-family: "GothamProRegular";
+  src: url("../fonts/Gotham_Pro_Regular.woff2");
+}
+
+@font-face {
+  font-family: "GothamProMedium";
+  src: url("../fonts/gotham_medium.woff2");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "GothamProRegular", sans-serif;
+}
+button {
+  font-family: "GothamProMedium", sans-serif;
+  border: 0;
+}
+input {
+  border: 0;
+}
+
+ul,
+li,
+dl {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+  &:hover {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.container {
+  padding: 0 135px;
+}

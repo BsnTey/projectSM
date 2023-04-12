@@ -1,0 +1,46 @@
+.app-title {
+  text-transform: uppercase;
+  font-size: 36px;
+  line-height: 48px;
+}
+
+.app-accounts {
+  &__title {
+    margin-top: 68px;
+    text-align: start;
+  }
+  &__section {
+    margin-top: 30px;
+  }
+}
+
+.accounts-section {
+  border: 1px solid #dadada;
+  border-radius: 20px;
+  padding: 30px 38px;
+}
+
+.panel-tabs {
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  &__items {
+  }
+  &__item {
+    display: inline;
+    padding: 7px 24px;
+    height: 50px;
+    color: #000;
+    border: 1px solid #dadada;
+  }
+  &__block {
+    display: none;
+    padding: 20px;
+    font-size: 18px;
+    line-height: 24px;
+  }
+  &__block:target {
+    display: flex;
+  }
+}

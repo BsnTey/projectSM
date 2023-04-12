@@ -1,0 +1,80 @@
+.header-bar {
+  display: flex;
+  align-items: center;
+  background-color: #0e42c1;
+  color: #bdd3f7;
+  font-size: 12px;
+  height: 36px;
+  &__city {
+    position: relative;
+    padding: 21px;
+  }
+  &__city::before {
+    content: "";
+    display: block;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-image: url("../../img/flag.svg");
+    position: absolute;
+    left: 0;
+  }
+  &__phone {
+    margin-left: 37px;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1551e5;
+  height: 72px;
+  &__logo {
+    width: 198px;
+    height: 26px;
+    background-image: url(../../img/logo.svg);
+  }
+  &__login {
+    font-size: 12px;
+    text-transform: uppercase;
+    background-color: #1551e5;
+    color: #fff;
+  }
+}
+
+.sm-search-wrapper {
+  min-height: 44px;
+  flex-basis: 477px;
+}
+
+.sm-search {
+  display: flex;
+  align-items: stretch;
+  &__input-wpapper {
+    background-color: #4677ef;
+    padding: 10px 16px;
+    flex-basis: 100%;
+    text-align: left;
+  }
+  &__input-wpapper:hover {
+    background-color: #2a63ef;
+  }
+  &__input {
+    background-color: #4677ef;
+    font-size: 14px;
+  }
+  &__input:hover {
+    background-color: #2a63ef;
+  }
+  &__input::placeholder {
+    font-family: "GothamProRegular", sans-serif;
+    color: #abd2ff;
+  }
+  &__btn {
+    flex-basis: 112px;
+    background-color: #0e42c1;
+    font-family: "GothamProRegular", sans-serif;
+    color: #fff;
+  }
+}
