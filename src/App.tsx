@@ -4,17 +4,21 @@ import "./App.css";
 
 import Header from "./components/header/Header";
 import AppAccounts from "./components/appAccounts/AppAccounts";
+import AppMenu from "./components/appMenu/AppMenu";
 
 const App = () => {
   return (
     <Router>
       <div className="App">
-        <main>
-          <Header />
-          {/* <Routes>
-            <Route path="/" element={<Header />} />
-          </Routes> */}
-          <AppAccounts />
+        <Header />
+        <main className="app-body container">
+          <h1 className="app-title app-body__title">Список аккаунтов</h1>
+          <div className="app-body__section">
+            <AppMenu />
+            <Routes>
+              <Route path="/" element={<AppAccounts />} />
+            </Routes>
+          </div>
         </main>
       </div>
     </Router>

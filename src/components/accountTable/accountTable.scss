@@ -1,0 +1,36 @@
+.accounts-table th,
+.accounts-table td {
+  border-bottom: 1px solid rgba(227, 227, 227, 1);
+}
+
+.accounts-table {
+  width: 100%;
+  &__title th {
+    font-size: 15px;
+    line-height: 17px;
+    text-align: left;
+    padding: 10px;
+  }
+  &__account td {
+    font-family: "GothamBook";
+    font-size: 14px;
+    line-height: 17px;
+    text-align: left;
+    padding: 19px 10px 19px 10px;
+  }
+  &__account-label {
+    display: flex;
+    align-items: center;
+  }
+  &__account-checkbox {
+    margin-right: 10px;
+    width: 16px;
+    height: 16px;
+  }
+  &__btn-key {
+    background: url(../../img/key.svg) no-repeat;
+  }
+  &__btn-update {
+    background: url(../../img/update.svg) no-repeat;
+  }
+}

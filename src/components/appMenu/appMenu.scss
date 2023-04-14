@@ -1,0 +1,37 @@
+.app-menu {
+  margin-right: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  text-align: start;
+  width: 300px;
+  cursor: pointer;
+  &__item {
+    display: flex;
+    align-items: center;
+    font-family: "GothamProRegular";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    white-space: nowrap;
+    display: flex;
+    gap: 13px;
+  }
+  &__item::before {
+    display: block;
+    content: " ";
+    width: 25px;
+    height: 25px;
+  }
+}
+
+.link-home::before {
+  background: url(../../img/home.svg) no-repeat;
+  background-size: 100%;
+}
+
+.link-list::before {
+  background: url(../../img/list.svg) no-repeat;
+  background-size: 100%;
+}
