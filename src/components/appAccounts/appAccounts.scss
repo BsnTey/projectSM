@@ -171,6 +171,15 @@
     text-align: left;
     padding: 19px 10px 19px 10px;
   }
+  &__account-label {
+    display: flex;
+    align-items: center;
+  }
+  &__account-checkbox {
+    margin-right: 10px;
+    width: 16px;
+    height: 16px;
+  }
   &__btn-key {
     background: url(../../img/filter-search.svg) no-repeat;
   }
@@ -184,6 +193,10 @@
   border-radius: 3px;
   padding: 5px 20px;
   background-color: white;
+}
+
+.account-btn:hover {
+  background-color: #1551e5;
 }
 
 .account-btn span {
