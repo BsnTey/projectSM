@@ -1,46 +1,195 @@
+.app-body {
+  &__title {
+    margin-top: 72px;
+    text-align: start;
+  }
+  &__section {
+    margin-top: 60px;
+    display: flex;
+  }
+}
+
 .app-title {
   text-transform: uppercase;
   font-size: 36px;
   line-height: 48px;
 }
 
-.app-accounts {
-  &__title {
-    margin-top: 68px;
-    text-align: start;
-  }
-  &__section {
-    margin-top: 30px;
-  }
-}
-
-.accounts-section {
-  border: 1px solid #dadada;
-  border-radius: 20px;
-  padding: 30px 38px;
-}
-
-.panel-tabs {
-  margin-bottom: 50px;
+.app-menu {
+  margin-right: 50px;
   display: flex;
   flex-direction: column;
-  align-items: start;
-  &__items {
-  }
+  gap: 24px;
+  text-align: start;
+  width: 300px;
+  cursor: pointer;
   &__item {
-    display: inline;
-    padding: 7px 24px;
-    height: 50px;
-    color: #000;
-    border: 1px solid #dadada;
-  }
-  &__block {
-    display: none;
-    padding: 20px;
-    font-size: 18px;
-    line-height: 24px;
-  }
-  &__block:target {
+    font-family: "GothamProMedium";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    white-space: nowrap;
     display: flex;
+    gap: 13px;
   }
+  &__item::before {
+    display: block;
+    content: " ";
+    width: 25px;
+    height: 25px;
+  }
+}
+
+.link-home::before {
+  background: url(../../img/home.svg) no-repeat;
+  background-size: 100%;
+}
+
+.link-list::before {
+  background: url(../../img/list.svg) no-repeat;
+  background-size: 100%;
+}
+
+.filter-btns {
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+}
+
+.filter-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 420px;
+  flex-basis: 100%;
+  background-color: #f5f5f5;
+  padding-left: 20px;
+  &__input {
+    background-color: #f5f5f5;
+    font-family: "GothamProMedium";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+  }
+  &__button {
+    flex-basis: 62px;
+    background-color: #f5f5f5;
+    padding: 0 20px;
+  }
+  &__button::before {
+    display: block;
+    content: " ";
+    background: url(../../img/filter-search.svg) no-repeat;
+    background-size: 100%;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.search-body {
+  width: 100%;
+}
+
+.filter-btn {
+  margin-left: 30px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.search-body {
+  &__block-accounts {
+    margin-top: 60px;
+  }
+}
+
+.filter-btns span {
+  width: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+  gap: 10px;
+  &::before {
+    display: flex;
+    content: " ";
+    width: 22px;
+    height: 22px;
+  }
+}
+
+.filter-btns {
+  &__down span::before {
+    background: url(../../img/sortDown.svg) no-repeat;
+    background-size: 100%;
+  }
+}
+
+.filter-btns {
+  &__up span::before {
+    background: url(../../img/sortUp.svg) no-repeat;
+    background-size: 100%;
+  }
+}
+
+.filter-btns {
+  &__add span::before {
+    background: url(../../img/add.svg) no-repeat;
+    background-size: 100%;
+  }
+}
+
+.filter-btns {
+  &__update span::before {
+    background: url(../../img/update.svg) no-repeat;
+    background-size: 100%;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.accounts-table th,
+.accounts-table td {
+  border-bottom: 1px solid rgba(227, 227, 227, 1);
+}
+
+.accounts-table {
+  width: 100%;
+  &__title th {
+    font-size: 15px;
+    line-height: 17px;
+    text-align: left;
+    padding: 10px;
+  }
+  &__account td {
+    font-family: "GothamBook";
+    font-size: 14px;
+    line-height: 17px;
+    text-align: left;
+    padding: 19px 10px 19px 10px;
+  }
+  &__btn-key {
+    background: url(../../img/filter-search.svg) no-repeat;
+  }
+  &__btn-update {
+    background: url(../../img/update.svg) no-repeat;
+  }
+}
+
+.account-btn {
+  border: 1px solid #e3e3e3;
+  border-radius: 3px;
+  padding: 5px 20px;
+  background-color: white;
+}
+
+.account-btn span {
+  margin: 0 auto;
+  display: block;
+  background-size: 100%;
+  width: 18px;
+  height: 17px;
 }
