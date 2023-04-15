@@ -2,7 +2,7 @@ import "./accountFilter.scss";
 
 const AccountFilter = () => {
   return (
-    <div className="filter-btns search-body__btns">
+    <div className="filter-btns list-body__btns">
       <form className="filter-form filter-btns__input-form" action="">
         <label className="filter-form__label">
           <input className="filter-form__input" placeholder="Искать" type="text" name="search" />

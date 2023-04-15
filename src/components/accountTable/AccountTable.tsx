@@ -4,7 +4,7 @@ import "./accountTable.scss";
 
 const AccountTable = () => {
   return (
-    <table className="accounts-table search-body__block-accounts">
+    <table className="accounts-table app-body__block-accounts">
       <tr className="accounts-table__title">
         <th>Token</th>
         <th>Обновлено</th>
