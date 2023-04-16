@@ -12,6 +12,7 @@ const App = () => {
     <Router>
       <div className="App">
         <Header />
+        {/* <AddAccount /> */}
         <Routes>
           <Route path="/" element={<AppAccounts />} />
         </Routes>

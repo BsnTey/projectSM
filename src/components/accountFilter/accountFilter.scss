@@ -24,8 +24,8 @@
   &__update span::before {
     background: url(../../img/update.svg) no-repeat;
     background-size: 100%;
-    width: 20px;
-    height: 20px;
+    width: 2rem;
+    height: 2rem;
   }
 }
 
@@ -33,7 +33,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 420px;
+  max-width: 42rem;
   flex-basis: 100%;
   background-color: #f5f5f5;
   padding-left: 2rem;
