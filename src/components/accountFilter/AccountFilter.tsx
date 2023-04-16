@@ -1,6 +1,16 @@
+import { useState } from "react";
+
 import "./accountFilter.scss";
+import { Portal } from "../portal/Portal";
+import AddAccount from "../addAccount/AddAccount";
 
 const AccountFilter = () => {
+  const [openPortal, setOpenPortal] = useState(false);
+
+  const onOpenAddAccount = () => {
+    setOpenPortal(!openPortal);
+  };
+
   return (
     <div className="filter-btns list-body__btns">
       <form className="filter-form filter-btns__input-form" action="">
@@ -18,7 +28,7 @@ const AccountFilter = () => {
           <span>По возрастанию</span>
         </button>
 
-        <button className="filter-btn filter-btns__add">
+        <button className="filter-btn filter-btns__add" onClick={() => onOpenAddAccount()}>
           <span>Добавить</span>
         </button>
 
@@ -26,6 +36,7 @@ const AccountFilter = () => {
           <span>Обновить все</span>
         </button>
       </div>
+      {openPortal && <Portal children={<AddAccount />} onClose={onOpenAddAccount} />}
     </div>
   );
 };
