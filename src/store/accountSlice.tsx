@@ -1,17 +1,16 @@
+import { useSelector } from "react-redux";
 import { createSlice } from "@reduxjs/toolkit";
+import { RootState } from "./store";
 import accountsMock from "./mocks/accounts";
+
 export const counterSlice = createSlice({
   name: "accounts",
   initialState: {
-    accounts: accountsMock,
+    accauntList: accountsMock,
   },
-  reducers: {
-    //     deleteAccount: (state, payload) => {
-    //       state.accounts.filter((account) => payload?.id !== account?.id);
-    //     },
-  },
+  reducers: {},
 });
 
 export const {} = counterSlice.actions;
-
+export const useAccounts = () => useSelector((state: RootState) => state.accounts?.accauntList);
 export default counterSlice.reducer;
