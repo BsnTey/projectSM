@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { createPortal } from "react-dom";
 
 import "./portal.scss";
 
@@ -12,10 +12,10 @@ export interface IPortalProps {
 
 export const Portal: React.FC<IPortalProps> = ({ children, onClose }) => {
   return root
-    ? ReactDOM.createPortal(
+    ? createPortal(
         <div className="portal-wrap">
           <div className="portal">
-            <div className="close-portal" onClick={() => onClose()}></div>
+            <div className="close-portal" onClick={onClose}></div>
             {children}
           </div>
         </div>,

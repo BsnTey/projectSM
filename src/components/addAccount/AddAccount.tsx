@@ -1,13 +1,8 @@
 import "./addAccount.scss";
 
-interface IAddAccountProps {
-  // nonActive: boolean;
-  // setActive: (arg: boolean) => void;
-}
-
-const AddAccount: React.FC<IAddAccountProps> = () => {
+const AddAccount = () => {
   return (
-    <form className="add-form__form" action="">
+    <div className="add-form__form">
       <h2 className="modal-title add-form__title">Внесите новые аккаунты</h2>
       <div className="add-form__input-wrap">
         <div className="add-form__main-input-wrap">
@@ -17,7 +12,7 @@ const AddAccount: React.FC<IAddAccountProps> = () => {
         <button className="add-form__btn-input">+ больше</button>
       </div>
       <button className="add-form__btn-add">Добавить</button>
-    </form>
+    </div>
   );
 };
 

@@ -28,7 +28,7 @@ const AccountFilter = () => {
           <span>По возрастанию</span>
         </button>
 
-        <button className="filter-btn filter-btns__add" onClick={() => onOpenAddAccount()}>
+        <button className="filter-btn filter-btns__add" onClick={onOpenAddAccount}>
           <span>Добавить</span>
         </button>
 
