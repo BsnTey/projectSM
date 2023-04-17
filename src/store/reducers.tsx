@@ -1,8 +1,8 @@
-import { combineReducers } from 'redux';
+import { combineReducers } from "redux";
+import accountSlice from "./accountSlice";
 
 const rootReducer = combineReducers({
-  // users: usersReducer,
-  // posts: postsReducer,
+  accounts: accountSlice,
 });
 
 export default rootReducer;
