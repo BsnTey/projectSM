@@ -1,13 +1,57 @@
-.add-form-wrap {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+.add-form {
+  &__title {
+    margin-bottom: 3.2rem;
+    text-align: start;
+  }
+  &__input {
+    padding: 1.5rem 2rem;
+    border: 1px solid #e3e3e3;
+    font-size: 1.4rem;
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+  }
+  &__input-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+  &__btn-input {
+    font-family: "GothamProRegular";
+    padding: 1.5rem 2rem;
+    background-color: white;
+    border: 1px solid #e3e3e3;
+    font-size: 1.4rem;
+    text-align: start;
+    color: #e3e3e3;
+    font-size: 1.4rem;
+  }
+  &__btn-add {
+    font-family: "GothamBook";
+    font-weight: 400;
+    padding: 1.5rem 5.2rem;
+    background-color: #1551e5;
+    font-size: 1.2rem;
+    line-height: 1.7rem;
+    color: white;
+    margin: 0 auto;
+  }
+  &__main-input-wrap {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    gap: 0.6rem;
+  }
+  &__input-title {
+    font-family: "GothamProRegular";
+    font-size: 1rem;
+    font-weight: 400;
+    color: #939393;
+  }
 }
 
 .add-form {
