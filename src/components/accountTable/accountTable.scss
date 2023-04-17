@@ -6,26 +6,26 @@
 .accounts-table {
   width: 100%;
   &__title th {
-    font-size: 15px;
-    line-height: 17px;
+    font-size: 1.5rem;
+    line-height: 1.7rem;
     text-align: left;
-    padding: 10px;
+    padding: 1rem;
   }
   &__account td {
     font-family: "GothamBook";
-    font-size: 14px;
-    line-height: 17px;
+    font-size: 1.4rem;
+    line-height: 1.7rem;
     text-align: left;
-    padding: 19px 10px 19px 10px;
+    padding: 1.9rem 1rem 1.9rem 1rem;
   }
   &__account-label {
     display: flex;
     align-items: center;
   }
   &__account-checkbox {
-    margin-right: 10px;
-    width: 16px;
-    height: 16px;
+    margin-right: 1rem;
+    width: 1.6rem;
+    height: 1.6rem;
   }
   &__btn-key {
     background: url(../../img/key.svg) no-repeat;

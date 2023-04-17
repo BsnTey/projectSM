@@ -3,24 +3,24 @@
   align-items: center;
   background-color: #0e42c1;
   color: #bdd3f7;
-  font-size: 12px;
-  height: 36px;
+  font-size: 1.2rem;
+  height: 3.6rem;
   &__city {
     position: relative;
-    padding: 21px;
+    padding: 2.1rem;
   }
   &__city::before {
     content: "";
     display: block;
-    width: 14px;
-    height: 14px;
+    width: 1.4rem;
+    height: 1.4rem;
     border-radius: 50%;
     background-image: url("../../img/flag.svg");
     position: absolute;
     left: 0;
   }
   &__phone {
-    margin-left: 37px;
+    margin-left: 3.7rem;
   }
 }
 
@@ -29,14 +29,14 @@
   align-items: center;
   justify-content: space-between;
   background-color: #1551e5;
-  height: 72px;
+  height: 7.2rem;
   &__logo {
-    width: 198px;
-    height: 26px;
+    width: 19.8rem;
+    height: 2.6rem;
     background-image: url(../../img/logo.svg);
   }
   &__login {
-    font-size: 12px;
+    font-size: 1.2rem;
     text-transform: uppercase;
     background-color: #1551e5;
     color: #fff;

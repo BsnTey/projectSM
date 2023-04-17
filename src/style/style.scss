@@ -19,6 +19,10 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 body {
   font-family: "GothamProRegular", sans-serif;
 }
@@ -72,5 +76,5 @@ input::-webkit-inner-spin-button {
 }
 
 .container {
-  padding: 0 135px;
+  padding: 0 13.5rem;
 }
