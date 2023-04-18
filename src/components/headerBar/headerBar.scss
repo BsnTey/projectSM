@@ -1,0 +1,25 @@
+.header-bar {
+  display: flex;
+  align-items: center;
+  background-color: #0e42c1;
+  color: #bdd3f7;
+  font-size: 1.2rem;
+  height: 3.6rem;
+  &__city {
+    position: relative;
+    padding: 2.1rem;
+  }
+  &__city::before {
+    content: "";
+    display: block;
+    width: 1.4rem;
+    height: 1.4rem;
+    border-radius: 50%;
+    background-image: url("../../img/flag.svg");
+    position: absolute;
+    left: 0;
+  }
+  &__phone {
+    margin-left: 3.7rem;
+  }
+}
