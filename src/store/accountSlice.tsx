@@ -11,13 +11,7 @@ export const accountSlice = createSlice({
   reducers: {
     sortAccountList: (state, action) => {
       state.sortType = action.payload;
-      state.accountList = [...state.accountList].sort((a, b) => {
-        if (state.sortType === "desc") {
-          return a.amount - b.amount;
-        } else {
-          return b.amount - a.amount;
-        }
-      });
+      state.accountList = [...state.accountList].sort((a, b) => (state.sortType === "desc" ? a.amount - b.amount : b.amount - a.amount));
     },
   },
 });

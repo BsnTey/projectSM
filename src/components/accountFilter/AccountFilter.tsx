@@ -3,13 +3,20 @@ import { useState } from "react";
 import "./accountFilter.scss";
 import { Portal } from "../portal/Portal";
 import AddAccount from "../addAccount/AddAccount";
-import FilterActionButton from "../filterActionButton/FilterActionButton";
+import ActionButton from "../actionButton/ActionButton";
+import { sortAccountList } from "../../store/accountSlice";
+import { useDispatch } from "react-redux";
 
 const AccountFilter = () => {
+  const dispatch = useDispatch();
   const [openPortal, setOpenPortal] = useState(false);
 
   const onOpenAddAccount = () => {
     setOpenPortal(!openPortal);
+  };
+
+  const handleSortClick = (TypeBtn: string) => {
+    dispatch(sortAccountList(TypeBtn));
   };
 
   return (
@@ -21,10 +28,10 @@ const AccountFilter = () => {
         <button className="filter-form__button" type="button" />
       </form>
       <div className="filter-btns__filter-btns-wrap">
-        <FilterActionButton text={"По убыванию"} iconClass={"filter-btns__down"} TypeBtn={"asc"} />
-        <FilterActionButton text={"По возрастанию"} iconClass={"filter-btns__up"} TypeBtn={"desc"} />
-        <FilterActionButton text={"Добавить"} iconClass={"filter-btns__add"} TypeBtn={"addAcc"} />
-        <FilterActionButton text={"Обновить все"} iconClass={"filter-btns__update"} TypeBtn={"updateAll"} />
+        <ActionButton text={"По убыванию"} className={"action-btn filter-btns__down"} onClick={() => handleSortClick("asc")} />
+        <ActionButton text={"По возрастанию"} className={"action-btn filter-btns__up"} onClick={() => handleSortClick("desc")} />
+        <ActionButton text={"Добавить"} className={"action-btn filter-btns__add"} onClick={() => handleSortClick("addAcc")} /> {/* temp */}
+        <ActionButton text={"Обновить все"} className={"action-btn filter-btns__update"} onClick={() => handleSortClick("updateAll")} /> {/* temp */}
       </div>
       {openPortal && <Portal children={<AddAccount />} onClose={onOpenAddAccount} />}
     </div>
