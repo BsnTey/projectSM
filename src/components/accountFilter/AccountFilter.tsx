@@ -3,6 +3,7 @@ import { useState } from "react";
 import "./accountFilter.scss";
 import { Portal } from "../portal/Portal";
 import AddAccount from "../addAccount/AddAccount";
+import FilterActionButton from "../filterActionButton/FilterActionButton";
 
 const AccountFilter = () => {
   const [openPortal, setOpenPortal] = useState(false);
@@ -20,21 +21,10 @@ const AccountFilter = () => {
         <button className="filter-form__button" type="button" />
       </form>
       <div className="filter-btns__filter-btns-wrap">
-        <button className="filter-btn filter-btns__down">
-          <span>По убыванию</span>
-        </button>
-
-        <button className="filter-btn filter-btns__up">
-          <span>По возрастанию</span>
-        </button>
-
-        <button className="filter-btn filter-btns__add" onClick={onOpenAddAccount}>
-          <span>Добавить</span>
-        </button>
-
-        <button className="filter-btn filter-btns__update">
-          <span>Обновить все</span>
-        </button>
+        <FilterActionButton text={"По убыванию"} iconClass={"filter-btns__down"} TypeBtn={"asc"} />
+        <FilterActionButton text={"По возрастанию"} iconClass={"filter-btns__up"} TypeBtn={"desc"} />
+        <FilterActionButton text={"Добавить"} iconClass={"filter-btns__add"} TypeBtn={"addAcc"} />
+        <FilterActionButton text={"Обновить все"} iconClass={"filter-btns__update"} TypeBtn={"updateAll"} />
       </div>
       {openPortal && <Portal children={<AddAccount />} onClose={onOpenAddAccount} />}
     </div>
