@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "./store";
 import accountsMock from "./mocks/accounts";
+import { TypeBtn } from "../utils/enum";
 
 export const accountSlice = createSlice({
   name: "accounts",
@@ -11,7 +12,7 @@ export const accountSlice = createSlice({
   reducers: {
     sortAccountList: (state, action) => {
       state.sortType = action.payload;
-      state.accountList = [...state.accountList].sort((a, b) => (state.sortType === "desc" ? a.amount - b.amount : b.amount - a.amount));
+      state.accountList = [...state.accountList].sort((a, b) => (state.sortType === TypeBtn.desk ? a.amount - b.amount : b.amount - a.amount));
     },
   },
 });
