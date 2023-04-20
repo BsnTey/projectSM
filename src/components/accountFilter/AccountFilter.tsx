@@ -14,12 +14,15 @@ const AccountFilter = () => {
 
   const onOpenAddAccount = useCallback(() => {
     setOpenPortal(!openPortal);
-  }, []);
+  }, [openPortal]);
 
-  const handleSortClick = useCallback((event: React.MouseEvent<HTMLButtonElement>) => {
-    const type = (event.target as HTMLButtonElement).getAttribute("data-type");
-    dispatch(sortAccountList(type));
-  }, []);
+  const handleSortClick = useCallback(
+    (event: React.MouseEvent<HTMLButtonElement>) => {
+      const type = (event.currentTarget as HTMLButtonElement).getAttribute("data-type");
+      dispatch(sortAccountList(type));
+    },
+    [dispatch]
+  );
 
   return (
     <div className="filter-btns list-body__btns">
