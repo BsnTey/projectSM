@@ -1,13 +1,13 @@
+import { useSelector } from "react-redux";
+import { selectTitles } from "../../store/accountSlice";
 import "./tableHeader.scss";
 
-interface ITableHeaderProps {
-  titleList: string[];
-}
+const TableHeader = () => {
+  const titles = useSelector(selectTitles);
 
-const TableHeader: React.FC<ITableHeaderProps> = ({ titleList }) => {
   return (
     <tr>
-      {titleList.map((title) => (
+      {titles.map((title) => (
         <th className="accounts-table__title">{title}</th>
       ))}
     </tr>
