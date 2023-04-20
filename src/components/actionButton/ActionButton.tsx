@@ -1,3 +1,4 @@
+import { memo } from "react";
 import "./actionButton.scss";
 
 interface IActionButtonProps {
@@ -15,4 +16,4 @@ const ActionButton: React.FC<IActionButtonProps> = ({ text, className, dataType,
   );
 };
 
-export default ActionButton;
+export default memo(ActionButton);

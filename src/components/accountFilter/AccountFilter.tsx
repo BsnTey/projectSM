@@ -16,9 +16,8 @@ const AccountFilter = () => {
     setOpenPortal(!openPortal);
   }, []);
 
-  const handleSortClick = useCallback((event: React.SyntheticEvent) => {
-    // @ts-ignore
-    const type = event.target.parentNode?.dataset?.type;
+  const handleSortClick = useCallback((event: React.MouseEvent<HTMLButtonElement>) => {
+    const type = (event.target as HTMLButtonElement).getAttribute("data-type");
     dispatch(sortAccountList(type));
   }, []);
 
