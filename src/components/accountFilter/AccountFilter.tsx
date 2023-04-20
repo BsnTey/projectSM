@@ -12,9 +12,9 @@ const AccountFilter = () => {
   const dispatch = useDispatch();
   const [openPortal, setOpenPortal] = useState(false);
 
-  const onOpenAddAccount = () => {
+  const onOpenAddAccount = useCallback(() => {
     setOpenPortal(!openPortal);
-  };
+  }, []);
 
   const handleSortClick = useCallback((event: React.SyntheticEvent) => {
     // @ts-ignore
