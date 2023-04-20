@@ -1,10 +1,14 @@
-import { useAccounts } from "../../store/accountSlice";
+import { selectAccounts } from "../../store/accountSlice";
+import { useSelector } from "react-redux";
+
 import AccountButton from "../buttonAccount/ButtonAccount";
 
 const AccountData = () => {
+  const accounts = useSelector(selectAccounts);
+
   return (
     <>
-      {useAccounts()?.map(({ token, dateCheck, amount }) => {
+      {accounts?.map(({ token, dateCheck, amount }) => {
         return (
           <tr className="accounts-table__account">
             <td>
