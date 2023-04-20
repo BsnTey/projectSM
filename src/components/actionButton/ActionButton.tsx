@@ -3,12 +3,13 @@ import "./actionButton.scss";
 interface IActionButtonProps {
   text: string;
   className: string;
-  onClick: () => void;
+  dataType: string;
+  onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
-const ActionButton: React.FC<IActionButtonProps> = ({ text, className, onClick }) => {
+const ActionButton: React.FC<IActionButtonProps> = ({ text, className, dataType, onClick }) => {
   return (
-    <button className={className} onClick={onClick}>
+    <button className={className} data-type={dataType} onClick={onClick}>
       <span>{text}</span>
     </button>
   );

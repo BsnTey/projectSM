@@ -16,8 +16,10 @@ const AccountFilter = () => {
     setOpenPortal(!openPortal);
   };
 
-  const handleSortClick = useCallback((TypeBtn: string) => {
-    dispatch(sortAccountList(TypeBtn));
+  const handleSortClick = useCallback((event: React.SyntheticEvent) => {
+    // @ts-ignore
+    const type = event.target.parentNode?.dataset?.type;
+    dispatch(sortAccountList(type));
   }, []);
 
   return (
@@ -29,10 +31,10 @@ const AccountFilter = () => {
         <button className="filter-form__button" type="button" />
       </form>
       <div className="filter-btns__filter-btns-wrap">
-        <ActionButton text={"По убыванию"} className="action-btn filter-btns__down" onClick={() => handleSortClick(TypeBtn.ask)} />
-        <ActionButton text={"По возрастанию"} className="action-btn filter-btns__up" onClick={() => handleSortClick(TypeBtn.desk)} />
-        <ActionButton text={"Добавить"} className="action-btn filter-btns__add" onClick={() => handleSortClick(TypeBtn.addAcc)} /> {/* temp */}
-        <ActionButton text={"Обновить все"} className="action-btn filter-btns__update" onClick={() => handleSortClick(TypeBtn.updateAll)} /> {/* temp */}
+        <ActionButton text={"По убыванию"} className="action-btn filter-btns__down" dataType={TypeBtn.ask} onClick={handleSortClick} />
+        <ActionButton text={"По возрастанию"} className="action-btn filter-btns__up" dataType={TypeBtn.desk} onClick={handleSortClick} />
+        <ActionButton text={"Добавить"} className="action-btn filter-btns__add" dataType={TypeBtn.addAcc} onClick={onOpenAddAccount} /> {/* temp */}
+        <ActionButton text={"Обновить все"} className="action-btn filter-btns__update" dataType={TypeBtn.updateAll} onClick={handleSortClick} /> {/* temp */}
       </div>
       {openPortal && <Portal children={<AddAccount />} onClose={onOpenAddAccount} />}
     </div>
