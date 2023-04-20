@@ -26,12 +26,10 @@ const AccountFilter = () => {
 
   return (
     <div className="filter-btns list-body__btns">
-      <form className="filter-form filter-btns__input-form" action="">
-        <label className="filter-form__label">
-          <input className="filter-form__input" placeholder="Искать" type="text" name="search" />
-        </label>
+      <div className="filter-form filter-btns__input-form">
+        <input className="filter-form__input" placeholder="Искать" type="text" name="search" />
         <button className="filter-form__button" type="button" />
-      </form>
+      </div>
       <div className="filter-btns__filter-btns-wrap">
         <ActionButton text={"По убыванию"} className="action-btn filter-btns__down" dataType={TypeBtn.ask} onClick={handleSortClick} />
         <ActionButton text={"По возрастанию"} className="action-btn filter-btns__up" dataType={TypeBtn.desk} onClick={handleSortClick} />
