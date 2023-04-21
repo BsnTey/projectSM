@@ -19,5 +19,6 @@
   "token": "Токен",
   "amount": "Баланс",
   "dateCheck": "Дата проверки",
-  "getCookie": "Получить Cookie"
+  "getCookie": "Получить Cookie",
+  "language": "Язык"
 }

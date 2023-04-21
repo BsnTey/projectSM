@@ -20,6 +20,10 @@
     left: 0;
   }
   &__phone {
-    margin-left: 3.7rem;
+    margin: 0 3.7rem;
+  }
+  &__lang {
+    display: flex;
+    gap: 1rem;
   }
 }
