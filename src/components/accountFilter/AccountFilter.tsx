@@ -1,16 +1,18 @@
-import { useState } from "react";
-import { useCallback } from "react";
+import { useState, useCallback } from "react";
 import { Portal } from "../portal/Portal";
 import AddAccount from "../addAccount/AddAccount";
 import ActionButton from "../actionButton/ActionButton";
 import { TypeBtn } from "../../utils/enum";
 import { sortAccountList } from "../../store/accountSlice";
 import { useDispatch } from "react-redux";
+import { useTranslation } from "react-i18next";
 import "./accountFilter.scss";
 
 const AccountFilter = () => {
   const dispatch = useDispatch();
   const [openPortal, setOpenPortal] = useState(false);
+
+  const { t, i18n } = useTranslation();
 
   const onOpenAddAccount = useCallback(() => {
     setOpenPortal(!openPortal);
@@ -31,10 +33,10 @@ const AccountFilter = () => {
         <button className="filter-form__button" type="button" />
       </div>
       <div className="filter-btns__filter-btns-wrap">
-        <ActionButton text={"По убыванию"} className="action-btn filter-btns__down" dataType={TypeBtn.ask} onClick={handleSortClick} />
-        <ActionButton text={"По возрастанию"} className="action-btn filter-btns__up" dataType={TypeBtn.desk} onClick={handleSortClick} />
-        <ActionButton text={"Добавить"} className="action-btn filter-btns__add" dataType={TypeBtn.addAcc} onClick={onOpenAddAccount} /> {/* temp */}
-        <ActionButton text={"Обновить все"} className="action-btn filter-btns__update" dataType={TypeBtn.updateAll} onClick={handleSortClick} /> {/* temp */}
+        <ActionButton text={t("sortUP")} className="action-btn filter-btns__down" dataType={TypeBtn.ask} onClick={handleSortClick} />
+        <ActionButton text={t("sortDown")} className="action-btn filter-btns__up" dataType={TypeBtn.desk} onClick={handleSortClick} />
+        <ActionButton text={t("addBtn")} className="action-btn filter-btns__add" dataType={TypeBtn.addAcc} onClick={onOpenAddAccount} /> {/* temp */}
+        <ActionButton text={t("updateAll")} className="action-btn filter-btns__update" dataType={TypeBtn.updateAll} onClick={handleSortClick} /> {/* temp */}
       </div>
       {openPortal && <Portal children={<AddAccount />} onClose={onOpenAddAccount} />}
     </div>
