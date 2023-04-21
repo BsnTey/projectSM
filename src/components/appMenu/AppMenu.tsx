@@ -12,6 +12,9 @@ const AppMenu = () => {
       <Link to="/" className="link-list app-menu__item">
         <ActionButton text="Список" iconSrc={require("../../img/list.svg").default} className="nav-btn" />
       </Link>
+      <Link to="/" className="link-list app-menu__item">
+        <ActionButton text="Калькулятор" iconSrc={require("../../img/calculator.svg").default} className="nav-btn" />
+      </Link>
     </nav>
   );
 };
