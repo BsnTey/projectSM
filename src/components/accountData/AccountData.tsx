@@ -2,6 +2,8 @@ import { selectAccounts } from "../../store/accountSlice";
 import { useSelector } from "react-redux";
 import ActionButton from "../actionButton/ActionButton";
 import "./accountData.scss";
+import key from "../../img/key.svg";
+import update from "../../img/update.svg";
 
 const AccountData = () => {
   const accounts = useSelector(selectAccounts);
@@ -20,10 +22,10 @@ const AccountData = () => {
             <td>{dateCheck}</td>
             <td>{amount}</td>
             <td>
-              <ActionButton iconSrc={require("../../img/key.svg").default} className="account-btn" />
+              <ActionButton iconSrc={key} className="account-btn" />
             </td>
             <td>
-              <ActionButton iconSrc={require("../../img/update.svg").default} className="account-btn" />
+              <ActionButton iconSrc={update} className="account-btn" />
             </td>
           </tr>
         );

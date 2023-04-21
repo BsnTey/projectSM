@@ -1,15 +1,16 @@
-import { memo } from "react";
+import { memo, SVGProps } from "react";
 import Icon from "../icon/Icon";
 
 interface IActionButtonProps {
   text?: string;
-  iconSrc?: string;
+  iconSrc?: React.ComponentType<SVGProps<SVGSVGElement>>;
   className?: string;
   dataType?: string;
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 const ActionButton: React.FC<IActionButtonProps> = ({ text, iconSrc, className, dataType, onClick }) => {
+  console.log(iconSrc);
   return (
     <button className={className} data-type={dataType} onClick={onClick}>
       {iconSrc && <Icon iconSrc={iconSrc} />}

@@ -1,5 +1,6 @@
+import { SVGProps } from "react";
 interface IiconProps {
-  iconSrc: string;
+  iconSrc: React.ComponentType<SVGProps<SVGSVGElement>>;
 }
 
 const Icon: React.FC<IiconProps> = ({ iconSrc }) => {
