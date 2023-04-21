@@ -28,13 +28,13 @@ const AccountFilter = () => {
     <div className="filter-btns list-body__btns">
       <div className="filter-form filter-btns__input-form">
         <input className="filter-form__input" placeholder="Искать" type="text" name="search" />
-        <button className="filter-form__button" type="button" />
+        <ActionButton iconSrc={require("../../img/filter-search.svg").default} className="search-form-btn" />
       </div>
       <div className="filter-btns__filter-btns-wrap">
-        <ActionButton text={"По убыванию"} className="action-btn filter-btns__down" dataType={TypeBtn.ask} onClick={handleSortClick} />
-        <ActionButton text={"По возрастанию"} className="action-btn filter-btns__up" dataType={TypeBtn.desk} onClick={handleSortClick} />
-        <ActionButton text={"Добавить"} className="action-btn filter-btns__add" dataType={TypeBtn.addAcc} onClick={onOpenAddAccount} /> {/* temp */}
-        <ActionButton text={"Обновить все"} className="action-btn filter-btns__update" dataType={TypeBtn.updateAll} onClick={handleSortClick} /> {/* temp */}
+        <ActionButton text={"По убыванию"} iconSrc={require("../../img/sortUp.svg").default} className="action-btn" dataType={TypeBtn.ask} onClick={handleSortClick} />
+        <ActionButton text={"По возрастанию"} iconSrc={require("../../img/sortDown.svg").default} className="action-btn" dataType={TypeBtn.desk} onClick={handleSortClick} />
+        <ActionButton text={"Добавить"} iconSrc={require("../../img/add.svg").default} className="action-btn" dataType={TypeBtn.addAcc} onClick={onOpenAddAccount} />
+        <ActionButton text={"Обновить все"} iconSrc={require("../../img/update.svg").default} className="action-btn" dataType={TypeBtn.updateAll} onClick={handleSortClick} />
       </div>
       {openPortal && <Portal children={<AddAccount />} onClose={onOpenAddAccount} />}
     </div>
