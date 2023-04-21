@@ -1,32 +1,28 @@
 import { createSlice } from "@reduxjs/toolkit";
-
-interface User {
-  id: number;
-  token: string;
-  email: string;
-  loggedIn: boolean;
-}
-
-const initialState: User = {
-  id: 0,
-  token: "",
-  email: "",
-  loggedIn: false,
-};
+import usersMock from "./mocks/users";
 
 export const userSlice = createSlice({
   name: "user",
-  initialState,
+  initialState: {
+    initialUser: usersMock,
+  },
   reducers: {
-    setEmail(state, action) {
-      state.email = action.payload;
+    addUser(state, action) {
+      const user = {
+        id: action.payload.id,
+        name: action.payload.name,
+        token: action.payload.token,
+        email: action.payload.email,
+      };
+
+      state.initialUser = [...state.initialUser, user];
     },
-    setLoggedIn(state, action) {
-      state.loggedIn = action.payload;
+    deluser(state, action) {
+      state.initialUser = [...state.initialUser].filter((user) => user.id !== action.payload.id);
     },
   },
 });
 
-export const { setEmail, setLoggedIn } = userSlice.actions;
+export const { addUser } = userSlice.actions;
 
 export default userSlice.reducer;
