@@ -17,12 +17,12 @@ export const userSlice = createSlice({
 
       state.initialUser = [...state.initialUser, user];
     },
-    deluser(state, action) {
+    delUser(state, action) {
       state.initialUser = [...state.initialUser].filter((user) => user.id !== action.payload.id);
     },
   },
 });
 
-export const { addUser } = userSlice.actions;
+export const { addUser, delUser } = userSlice.actions;
 
 export default userSlice.reducer;
