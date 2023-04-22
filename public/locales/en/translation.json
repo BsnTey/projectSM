@@ -1,0 +1,24 @@
+{
+  "sortUP": "Sort UP",
+  "sortDown": "Sort Down",
+  "addBtn": "Add Account",
+  "updateAll": "Update All",
+  "signIn": "Sign In",
+  "find": "Find",
+  "addNewAcc": "Add new accounts",
+  "numberAcc": "Account number",
+  "more": "more",
+  "add": "Add",
+  "listAcc": "List of accounts",
+  "personalCab": "Personal account",
+  "list": "List",
+  "calculator": "Calculator",
+  "city": {
+    "moscow": "Moscow"
+  },
+  "token": "Token",
+  "amount": "Amount",
+  "dateCheck": "Check date",
+  "getCookie": "Get Cookie",
+  "language": "Language"
+}

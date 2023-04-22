@@ -1,11 +1,11 @@
-import { useState } from "react";
-import { useCallback } from "react";
+import { useState, useCallback } from "react";
 import { Portal } from "../portal/Portal";
 import AddAccount from "../addAccount/AddAccount";
 import ActionButton from "../actionButton/ActionButton";
 import { TypeBtn } from "../../utils/enum";
 import { sortAccountList } from "../../store/accountSlice";
 import { useDispatch } from "react-redux";
+import { useTranslation } from "react-i18next";
 import sortUp from "../../img/sortUp.svg";
 import filterSearch from "../../img/filter-search.svg";
 import sortDown from "../../img/sortDown.svg";
@@ -16,6 +16,8 @@ import "./accountFilter.scss";
 const AccountFilter = () => {
   const dispatch = useDispatch();
   const [openPortal, setOpenPortal] = useState(false);
+
+  const { t, i18n } = useTranslation();
 
   const onOpenAddAccount = useCallback(() => {
     setOpenPortal(!openPortal);
@@ -36,10 +38,10 @@ const AccountFilter = () => {
         <ActionButton iconSrc={filterSearch} className="search-form-btn" />
       </div>
       <div className="filter-btns__filter-btns-wrap">
-        <ActionButton text={"По убыванию"} iconSrc={sortDown} className="action-btn" dataType={TypeBtn.ask} onClick={handleSortClick} />
-        <ActionButton text={"По возрастанию"} iconSrc={sortUp} className="action-btn" dataType={TypeBtn.desk} onClick={handleSortClick} />
-        <ActionButton text={"Добавить"} iconSrc={add} className="action-btn" dataType={TypeBtn.addAcc} onClick={onOpenAddAccount} />
-        <ActionButton text={"Обновить все"} iconSrc={update} className="action-btn" dataType={TypeBtn.updateAll} onClick={handleSortClick} />
+        <ActionButton text={t("sortUP")} iconSrc={sortDown} className="action-btn filter-btns__down" dataType={TypeBtn.ask} onClick={handleSortClick} />
+        <ActionButton text={t("sortDown")} iconSrc={sortUp} className="action-btn filter-btns__up" dataType={TypeBtn.desk} onClick={handleSortClick} />
+        <ActionButton text={t("addBtn")} iconSrc={add} className="action-btn filter-btns__add" dataType={TypeBtn.addAcc} onClick={onOpenAddAccount} />
+        <ActionButton text={t("updateAll")} iconSrc={update} className="action-btn filter-btns__update" dataType={TypeBtn.updateAll} onClick={handleSortClick} />
       </div>
       {openPortal && <Portal children={<AddAccount />} onClose={onOpenAddAccount} />}
     </div>
