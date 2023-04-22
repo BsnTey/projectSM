@@ -35,8 +35,8 @@ const AccountFilter = () => {
       <div className="filter-btns__filter-btns-wrap">
         <ActionButton text={t("sortUP")} className="action-btn filter-btns__down" dataType={TypeBtn.ask} onClick={handleSortClick} />
         <ActionButton text={t("sortDown")} className="action-btn filter-btns__up" dataType={TypeBtn.desk} onClick={handleSortClick} />
-        <ActionButton text={t("addBtn")} className="action-btn filter-btns__add" dataType={TypeBtn.addAcc} onClick={onOpenAddAccount} /> {/* temp */}
-        <ActionButton text={t("updateAll")} className="action-btn filter-btns__update" dataType={TypeBtn.updateAll} onClick={handleSortClick} /> {/* temp */}
+        <ActionButton text={t("addBtn")} className="action-btn filter-btns__add" dataType={TypeBtn.addAcc} onClick={onOpenAddAccount} />
+        <ActionButton text={t("updateAll")} className="action-btn filter-btns__update" dataType={TypeBtn.updateAll} onClick={handleSortClick} />
       </div>
       {openPortal && <Portal children={<AddAccount />} onClose={onOpenAddAccount} />}
     </div>
