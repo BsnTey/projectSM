@@ -2,7 +2,7 @@ import { memo, SVGProps } from "react";
 import Icon from "../icon/Icon";
 
 interface IActionButtonProps {
-  text?: string;
+  text?: string | null;
   iconSrc?: React.ComponentType<SVGProps<SVGSVGElement>>;
   className?: string;
   dataType?: string;
@@ -10,7 +10,6 @@ interface IActionButtonProps {
 }
 
 const ActionButton: React.FC<IActionButtonProps> = ({ text, iconSrc, className, dataType, onClick }) => {
-  console.log(iconSrc);
   return (
     <button className={className} data-type={dataType} onClick={onClick}>
       {iconSrc && <Icon iconSrc={iconSrc} />}

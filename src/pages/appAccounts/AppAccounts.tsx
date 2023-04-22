@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 import "./appAccounts.scss";
 
 const AppAccounts = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <div className="app-body container">

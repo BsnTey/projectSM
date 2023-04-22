@@ -8,7 +8,7 @@ import calculator from "../../img/calculator.svg";
 import "./appMenu.scss";
 
 const AppMenu = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <nav className="app-body__menu app-menu">
@@ -19,7 +19,7 @@ const AppMenu = () => {
         <ActionButton text={t("list")} iconSrc={list} className="nav-btn" />
       </Link>
       <Link to="/" className="link-list app-menu__item">
-        <ActionButton text="Калькулятор" iconSrc={calculator} className="nav-btn" />
+        <ActionButton text={t("calculator")} iconSrc={calculator} className="nav-btn" />
       </Link>
     </nav>
   );

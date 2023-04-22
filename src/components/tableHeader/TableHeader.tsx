@@ -1,11 +1,13 @@
 import { useTranslation } from "react-i18next";
+import { useMemo } from "react";
 import { useSelector } from "react-redux";
 import { titleSelector } from "../../store/accountSlice";
 import "./tableHeader.scss";
 
 const TableHeader = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   let titles = useSelector(titleSelector);
+  titles = useMemo(() => [...titles, t("getCookie"), t("update")], [titles, t]);
 
   return (
     <tr>

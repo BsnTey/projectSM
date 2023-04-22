@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import "./addAccount.scss";
 
 const AddAccount = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <div className="add-form__form">

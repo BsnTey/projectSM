@@ -17,7 +17,7 @@ const AccountFilter = () => {
   const dispatch = useDispatch();
   const [openPortal, setOpenPortal] = useState(false);
 
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   const onOpenAddAccount = useCallback(() => {
     setOpenPortal(!openPortal);
