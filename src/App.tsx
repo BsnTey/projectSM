@@ -11,7 +11,7 @@ const App = () => {
       <div className="App">
         <Header />
         <Routes>
-          <Route element={<GuardedRoute isRouteAccessible={isAuthenticated} redirectRoute="/login" />}>
+          <Route element={<GuardedRoute isRouteAccessible={isAuthenticated} />}>
             <Route path={"/"} element={<AppAccounts />} />
           </Route>
         </Routes>
