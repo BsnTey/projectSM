@@ -4,33 +4,23 @@
   gap: 2.4rem;
   text-align: start;
   width: 30rem;
+}
+
+.nav-btn {
+  display: flex;
+  gap: 1.3rem;
+  background-color: #fff;
+  font-family: "GothamProRegular";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 2.4rem;
+  line-height: 2.9rem;
+  white-space: nowrap;
   cursor: pointer;
-  &__item {
-    display: flex;
-    align-items: center;
-    font-family: "GothamProRegular";
-    font-style: normal;
-    font-weight: 500;
-    font-size: 2.4rem;
-    line-height: 2.9rem;
-    white-space: nowrap;
-    display: flex;
-    gap: 1.3rem;
-  }
-  &__item::before {
-    display: block;
-    content: " ";
-    width: 25px;
-    height: 25px;
-  }
 }
 
-.link-home::before {
-  background: url(../../img/home.svg) no-repeat;
-  background-size: 100%;
-}
-
-.link-list::before {
-  background: url(../../img/list.svg) no-repeat;
-  background-size: 100%;
+.nav-btn span:first-child {
+  display: block;
+  width: 2.5rem;
+  height: 2.5rem;
 }
