@@ -44,6 +44,7 @@
 }
 
 .action-btn {
+  padding: 1.4rem 0;
   font-style: normal;
   font-weight: 400;
   font-size: 1.4rem;
@@ -54,9 +55,13 @@
   align-items: center;
   white-space: nowrap;
   gap: 1rem;
+  &__icon {
+    width: 2.2rem;
+    height: 2.2rem;
+  }
 }
 
-.action-btn span:first-child {
-  width: 2.2rem;
-  height: 2.2rem;
+.action-btn--blue {
+  background-color: #1551e5;
+  color: white;
 }

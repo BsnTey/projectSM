@@ -38,10 +38,38 @@ const AccountFilter = () => {
         <ActionButton iconSrc={filterSearch} className="search-form-btn" />
       </div>
       <div className="filter-btns__filter-btns-wrap">
-        <ActionButton text={t("sortUP")} iconSrc={sortDown} className="action-btn filter-btns__down" dataType={TypeBtn.ask} onClick={handleSortClick} />
-        <ActionButton text={t("sortDown")} iconSrc={sortUp} className="action-btn filter-btns__up" dataType={TypeBtn.desk} onClick={handleSortClick} />
-        <ActionButton text={t("addBtn")} iconSrc={add} className="action-btn filter-btns__add" dataType={TypeBtn.addAcc} onClick={onOpenAddAccount} />
-        <ActionButton text={t("updateAll")} iconSrc={update} className="action-btn filter-btns__update" dataType={TypeBtn.updateAll} onClick={handleSortClick} />
+        <ActionButton
+          text={t("sortUP")}
+          iconSrc={sortDown}
+          classNameIcon="action-btn__icon"
+          className="action-btn filter-btns__down"
+          dataType={TypeBtn.ask}
+          onClick={handleSortClick}
+        />
+        <ActionButton
+          text={t("sortDown")}
+          iconSrc={sortUp}
+          classNameIcon="action-btn__icon"
+          className="action-btn filter-btns__up"
+          dataType={TypeBtn.desk}
+          onClick={handleSortClick}
+        />
+        <ActionButton
+          text={t("addBtn")}
+          iconSrc={add}
+          classNameIcon="action-btn__icon"
+          className="action-btn filter-btns__add"
+          dataType={TypeBtn.addAcc}
+          onClick={onOpenAddAccount}
+        />
+        <ActionButton
+          text={t("updateAll")}
+          iconSrc={update}
+          classNameIcon="action-btn__icon"
+          className="action-btn filter-btns__update"
+          dataType={TypeBtn.updateAll}
+          onClick={handleSortClick}
+        />
       </div>
       {openPortal && <Portal children={<AddAccount />} onClose={onOpenAddAccount} />}
     </div>
