@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-import usersMock from "./mocks/users";
+import userMock from "./mocks/user";
 
 export const userSlice = createSlice({
   name: "user",
   initialState: {
-    initialUser: usersMock,
+    currentUser: userMock,
   },
   reducers: {
     addUser(state, action) {
@@ -15,10 +15,10 @@ export const userSlice = createSlice({
         email: action.payload.email,
       };
 
-      state.initialUser = [...state.initialUser, user];
+      state.currentUser = user;
     },
     delUser(state, action) {
-      state.initialUser = [...state.initialUser].filter((user) => user.id !== action.payload.id);
+      state.currentUser = null;
     },
   },
 });
