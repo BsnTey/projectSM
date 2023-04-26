@@ -1,6 +1,6 @@
 let accountsMock = [
   {
-    token: "bd09a126-e0d6-4eac-a754-9c5f3d404257",
+    token: "bd09a126-e0d6-4eac-a754-9c5f3d404255",
     dateCheck: "09.04.2022 14:52",
     amount: 12,
   },
@@ -10,7 +10,7 @@ let accountsMock = [
     amount: 228,
   },
   {
-    token: "bd09a136-e0d6-4eac-a758-9c5f3d407257",
+    token: "bd09a136-e0d6-4eac-a758-9c5f3d407250",
     dateCheck: "09.04.2022 14:52",
     amount: 124,
   },
@@ -30,12 +30,12 @@ let accountsMock = [
     amount: 1348,
   },
   {
-    token: "bd09a136-e0d6-4eac-a754-9c5f3d407257",
+    token: "bd09a136-e0d6-4eac-a754-9c5f3d407252",
     dateCheck: "09.04.2022 14:52",
     amount: 10485,
   },
   {
-    token: "bd09a137-e0d6-4eac-a754-9c5f3d407257",
+    token: "bd09a137-e0d6-4eac-a754-9c5f3d407253",
     dateCheck: "09.04.2022 14:52",
     amount: 456554,
   },
