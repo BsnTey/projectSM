@@ -4,7 +4,7 @@ import { Portal } from "../portal/Portal";
 import AddAccount from "../addAccount/AddAccount";
 import ActionButton from "../actionButton/ActionButton";
 import { TypeBtn } from "../../utils/enum";
-import { sortAccountList, deleteSelected, accountSelected, selectedList } from "../../store/accountSlice";
+import { sortAccountList, deleteSelected, accountSelected, delAllSelectAccount } from "../../store/accountSlice";
 import { useDispatch } from "react-redux";
 import { useTranslation } from "react-i18next";
 import sortUp from "../../img/sortUp.svg";
@@ -39,7 +39,7 @@ const AccountFilter = () => {
   }, [dispatch]);
 
   const handleCancel = useCallback(() => {
-    selectedAccounts.forEach((token) => dispatch(selectedList({ token, checked: false })));
+    dispatch(delAllSelectAccount());
   }, [dispatch, selectedAccounts]);
 
   return (
@@ -50,8 +50,8 @@ const AccountFilter = () => {
       </div>
       {selectedAccounts.length > 0 ? (
         <div className="filter-btns__filter-btns-wrap">
-          <ActionButton text={t("Отменить")} className="action-btn" onClick={handleCancel} />
-          <ActionButton text={t("Удалить")} iconSrc={trash} className="action-btn" onClick={handleDelete} />
+          <ActionButton text={t("cancel")} className="action-btn" onClick={handleCancel} />
+          <ActionButton text={t("delete")} iconSrc={trash} className="action-btn" onClick={handleDelete} />
         </div>
       ) : (
         <div className="filter-btns__filter-btns-wrap">

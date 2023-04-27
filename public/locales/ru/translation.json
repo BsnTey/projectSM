@@ -21,5 +21,7 @@
   "dateCheck": "Дата проверки",
   "getCookie": "Получить Cookie",
   "update": "Обновить",
-  "language": "Язык"
+  "language": "Язык",
+  "cancel": "Отменить",
+  "delete": "Удалить"
 }

@@ -21,5 +21,7 @@
   "dateCheck": "Check date",
   "getCookie": "Get Cookie",
   "update": "Update",
-  "language": "Language"
+  "language": "Language",
+  "cancel": "Cancel",
+  "delete": "Delete"
 }

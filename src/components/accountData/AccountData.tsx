@@ -1,35 +1,22 @@
-import { useCallback } from "react";
 import { selectAccounts } from "../../store/accountSlice";
-import { useSelector, useDispatch } from "react-redux";
-import { selectedList } from "../../store/accountSlice";
-import { accountSelected } from "../../store/accountSlice";
+import { useSelector } from "react-redux";
 import ActionButton from "../actionButton/ActionButton";
+import Checkbox from "../checkbox/Checkbox";
 import "./accountData.scss";
 import key from "../../img/key.svg";
 import update from "../../img/update.svg";
 
 const AccountData = () => {
-  const dispatch = useDispatch();
   const accounts = useSelector(selectAccounts);
-  const selectedAccounts = useSelector(accountSelected);
-
-  const handleCheckboxChange = useCallback(
-    (token: string, checked: boolean) => {
-      console.log("вызвал handleCheckboxChange");
-      dispatch(selectedList({ token, checked }));
-    },
-    [dispatch]
-  );
 
   return (
     <>
       {accounts?.map(({ token, dateCheck, amount }) => {
-        const isSelected = selectedAccounts.includes(token);
         return (
           <tr className="accounts-table__account" key={token}>
             <td>
               <label className="accounts-table__account-label">
-                <input className="accounts-table__account-checkbox" type="checkbox" checked={isSelected} onChange={(event) => handleCheckboxChange(token, event.target.checked)} />
+                <Checkbox className="accounts-table__account-checkbox" token={token} />
                 {token}
               </label>
             </td>

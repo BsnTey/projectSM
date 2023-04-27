@@ -16,12 +16,16 @@ export const accountSlice = createSlice({
       state.sortType = action.payload;
       state.accountList.sort((a, b) => (state.sortType === TypeBtn.desk ? a.amount - b.amount : b.amount - a.amount));
     },
-    selectedList: (state, action) => {
-      const isChecked = action.payload.checked;
-      const token = action.payload.token;
-      const accountSelected = state.accountSelected;
-
-      isChecked ? accountSelected.push(token) : (state.accountSelected = accountSelected.filter((account) => account !== token));
+    selectAccount: (state, action) => {
+      const token = action.payload;
+      state.accountSelected.push(token);
+    },
+    delSelectAccount: (state, action) => {
+      const token = action.payload;
+      state.accountSelected = state.accountSelected.filter((account) => account !== token);
+    },
+    delAllSelectAccount: (state) => {
+      state.accountSelected = [];
     },
     deleteSelected: (state) => {
       state.accountList = state.accountList.filter((account) => !state.accountSelected.includes(account.token));
@@ -29,7 +33,7 @@ export const accountSlice = createSlice({
   },
 });
 
-export const { sortAccountList, selectedList, deleteSelected } = accountSlice.actions;
+export const { sortAccountList, selectAccount, delSelectAccount, delAllSelectAccount, deleteSelected } = accountSlice.actions;
 
 export const selectAccounts = (state: RootState) => state.accounts.accountList;
 
