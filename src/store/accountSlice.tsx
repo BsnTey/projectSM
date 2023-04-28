@@ -1,16 +1,23 @@
 import { createSlice } from "@reduxjs/toolkit";
-import selectedArray from "./mocks/selectedAccount";
+import { Account } from "./mocks/accounts";
 import { RootState } from "./store";
+import { createSelector } from "@reduxjs/toolkit";
 import accountsMock from "./mocks/accounts";
 import { TypeBtn } from "../utils/enum";
+
+interface AccountsState {
+  accountList: Account[];
+  accountSelected: string[];
+  sortType: string;
+}
 
 export const accountSlice = createSlice({
   name: "accounts",
   initialState: {
     accountList: accountsMock,
-    accountSelected: selectedArray,
+    accountSelected: [],
     sortType: "default",
-  },
+  } as AccountsState,
   reducers: {
     sortAccountList: (state, action) => {
       state.sortType = action.payload;
@@ -48,5 +55,9 @@ export const accountSelected = (state: RootState) => {
   const accountSelected = state.accounts.accountSelected;
   return accountSelected;
 };
+
+const accountSelectedSelector = (state: RootState) => state.accounts.accountSelected;
+
+export const isTokenSelected = createSelector([accountSelectedSelector, (_: RootState, token: string) => token], (accountSelected, token) => accountSelected.includes(token));
 
 export default accountSlice.reducer;
