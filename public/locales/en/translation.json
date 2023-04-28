@@ -22,5 +22,13 @@
   "getCookie": "Get Cookie",
   "update": "Update",
   "language": "Language",
-  "copy": "Copy"
+  "copy": "Copy",
+  "continue": "Continue",
+  "enterYourEmail": "Enter your email",
+  "enterPassword": "Enter Password",
+  "repeatPassword": "Repeat Password",
+  "regAuth": "Login or Registration",
+  "reg": "Registration",
+  "auth": "Login",
+  "forgotPassword": "Forgot your password"
 }

@@ -1,0 +1,54 @@
+.container-login {
+  padding: 0 6.1rem;
+}
+
+.login {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 55rem;
+  overflow: hidden;
+  &__header {
+    font-family: "GothamBlackItalic", sans-serif;
+    padding-top: 5.7rem;
+    padding-bottom: 4rem;
+    background-color: #1551e5;
+    color: white;
+    text-align: center;
+    font-style: italic;
+    font-size: 4rem;
+    letter-spacing: 0.6rem;
+    text-transform: uppercase;
+  }
+  &__logo {
+    position: absolute;
+    top: -2rem;
+    left: -6rem;
+  }
+}
+
+.login-body {
+  padding-top: 4rem;
+  padding-bottom: 6rem;
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+  }
+  &__btn {
+    width: 100%;
+    margin-top: 5rem;
+  }
+  &__add-text {
+    font-family: "GothamLight";
+    font-weight: 300;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+  }
+}
+
+.input-consent {
+  display: flex;
+  gap: 1.2rem;
+  margin-top: 1rem;
+}

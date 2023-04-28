@@ -5,7 +5,7 @@ const AddAccount = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="add-form__form">
+    <div className="add-form">
       <h2 className="modal-title add-form__title">{t("addNewAcc")}</h2>
       <div className="add-form__input-wrap">
         <div className="add-form__main-input-wrap">

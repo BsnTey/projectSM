@@ -7,7 +7,7 @@ const root = document.getElementById("react-modals");
 
 export interface IPortalProps {
   children: React.ReactNode;
-  onClose: () => void;
+  onClose?: () => void;
 }
 
 export const Portal: React.FC<IPortalProps> = ({ children, onClose }) => {
@@ -15,7 +15,7 @@ export const Portal: React.FC<IPortalProps> = ({ children, onClose }) => {
     ? createPortal(
         <div className="portal-wrap">
           <div className="portal">
-            <div className="close-portal" onClick={onClose}></div>
+            {onClose ? <div className="close-portal" onClick={onClose}></div> : null}
             {children}
           </div>
         </div>,
