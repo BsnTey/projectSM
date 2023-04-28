@@ -1,11 +1,13 @@
 import { Navigate, Outlet } from "react-router-dom";
-
-interface GuardedRouteProps {
-  isRouteAccessible?: boolean;
+import { useSelector } from "react-redux";
+import { selectUser } from "../../store/userSlice";
+interface IGuardedRouteProps {
   redirectRoute?: string;
 }
-const GuardedRoute = ({ isRouteAccessible = false }: GuardedRouteProps): JSX.Element => {
-  return isRouteAccessible ? <Outlet /> : <Navigate to="/login" replace />;
+const GuardedRoute = ({ redirectRoute = "/login" }: IGuardedRouteProps): JSX.Element => {
+  const currentUser = useSelector(selectUser);
+
+  return currentUser ? <Outlet /> : <Navigate to={redirectRoute} replace />;
 };
 
 export default GuardedRoute;

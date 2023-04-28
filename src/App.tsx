@@ -5,13 +5,12 @@ import AppAccounts from "./pages/appAccounts/AppAccounts";
 import "./App.css";
 
 const App = () => {
-  const isAuthenticated = true;
   return (
     <Router>
       <div className="App">
         <Header />
         <Routes>
-          <Route element={<GuardedRoute isRouteAccessible={isAuthenticated} />}>
+          <Route element={<GuardedRoute />}>
             <Route path={"/"} element={<AppAccounts />} />
           </Route>
         </Routes>
