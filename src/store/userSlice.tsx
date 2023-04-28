@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { RootState } from "./store";
 import userMock from "./mocks/user";
 
 export const userSlice = createSlice({
@@ -17,12 +18,14 @@ export const userSlice = createSlice({
 
       state.currentUser = user;
     },
-    delUser(state, action) {
+    delUser(state) {
       state.currentUser = null;
     },
   },
 });
 
 export const { addUser, delUser } = userSlice.actions;
+
+export const selectUser = (state: RootState) => state.users.currentUser;
 
 export default userSlice.reducer;
