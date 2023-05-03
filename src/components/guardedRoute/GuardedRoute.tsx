@@ -4,7 +4,7 @@ import { selectUser } from "../../store/userSlice";
 interface IGuardedRouteProps {
   redirectRoute?: string;
 }
-const GuardedRoute = ({ redirectRoute = "/login" }: IGuardedRouteProps): JSX.Element => {
+const GuardedRoute = ({ redirectRoute = "/auth" }: IGuardedRouteProps): JSX.Element => {
   const currentUser = useSelector(selectUser);
 
   return currentUser ? <Outlet /> : <Navigate to={redirectRoute} replace />;
