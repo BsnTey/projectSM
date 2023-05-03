@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { Portal } from "../portal/Portal";
 import Cookie from "../cookie/Cookie";
 import ActionButton from "../actionButton/ActionButton";
+import Checkbox from "../checkbox/Checkbox";
 import "./accountData.scss";
 import key from "../../img/key.svg";
 import update from "../../img/update.svg";
@@ -20,10 +21,10 @@ const AccountData = () => {
     <>
       {accounts?.map(({ token, dateCheck, amount }) => {
         return (
-          <tr className="accounts-table__account">
+          <tr className="accounts-table__account" key={token}>
             <td>
               <label className="accounts-table__account-label">
-                <input className="accounts-table__account-checkbox" type="checkbox" name="select-account" value="1" />
+                <Checkbox className="accounts-table__account-checkbox" token={token} />
                 {token}
               </label>
             </td>

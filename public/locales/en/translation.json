@@ -22,5 +22,7 @@
   "getCookie": "Get Cookie",
   "update": "Update",
   "language": "Language",
+  "cancel": "Cancel",
+  "delete": "Delete",
   "copy": "Copy"
 }

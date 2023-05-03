@@ -1,9 +1,10 @@
 import { useState, useCallback } from "react";
+import { useSelector } from "react-redux";
 import { Portal } from "../portal/Portal";
 import AddAccount from "../addAccount/AddAccount";
 import ActionButton from "../actionButton/ActionButton";
 import { TypeBtn } from "../../utils/enum";
-import { sortAccountList } from "../../store/accountSlice";
+import { sortAccountList, deleteSelected, accountSelected, delAllSelectAccount } from "../../store/accountSlice";
 import { useDispatch } from "react-redux";
 import { useTranslation } from "react-i18next";
 import sortUp from "../../img/sortUp.svg";
@@ -11,11 +12,13 @@ import filterSearch from "../../img/filter-search.svg";
 import sortDown from "../../img/sortDown.svg";
 import add from "../../img/add.svg";
 import update from "../../img/update.svg";
+import trash from "../../img/trash.svg";
 import "./accountFilter.scss";
 
 const AccountFilter = () => {
   const dispatch = useDispatch();
   const [openPortal, setOpenPortal] = useState(false);
+  const selectedAccounts = useSelector(accountSelected);
 
   const { t } = useTranslation();
 
@@ -30,6 +33,14 @@ const AccountFilter = () => {
     },
     [dispatch]
   );
+
+  const handleDelete = useCallback(() => {
+    dispatch(deleteSelected());
+  }, [dispatch]);
+
+  const handleCancel = useCallback(() => {
+    dispatch(delAllSelectAccount());
+  }, [dispatch, selectedAccounts]);
 
   return (
     <div className="filter-btns list-body__btns">
