@@ -15,7 +15,7 @@ const App = () => {
           <Route element={<GuardedRoute isRouteAccessible={isAuthenticated} />}>
             <Route path={"/"} element={<AppAccounts />} />
           </Route>
-          <Route path={"/login"} element={<Unauthorized />} />
+          <Route path={"/auth/*"} element={<Unauthorized />} />
         </Routes>
       </div>
     </Router>

@@ -5,7 +5,7 @@ interface GuardedRouteProps {
   redirectRoute?: string;
 }
 const GuardedRoute = ({ isRouteAccessible = false }: GuardedRouteProps): JSX.Element => {
-  return isRouteAccessible ? <Outlet /> : <Navigate to="/login" replace />;
+  return isRouteAccessible ? <Outlet /> : <Navigate to="/auth" replace />;
 };
 
 export default GuardedRoute;
