@@ -13,6 +13,7 @@ import sortDown from "../../img/sortDown.svg";
 import add from "../../img/add.svg";
 import update from "../../img/update.svg";
 import trash from "../../img/trash.svg";
+import cancel from "../../img/cancel.svg";
 import "./accountFilter.scss";
 
 const AccountFilter = () => {
@@ -48,40 +49,47 @@ const AccountFilter = () => {
         <input className="filter-form__input" placeholder="Искать" type="text" name="search" />
         <ActionButton iconSrc={filterSearch} className="search-form-btn" />
       </div>
-      <div className="filter-btns__filter-btns-wrap">
-        <ActionButton
-          text={t("sortUP")}
-          iconSrc={sortDown}
-          classNameIcon="action-btn__icon"
-          className="action-btn filter-btns__down"
-          dataType={TypeBtn.ask}
-          onClick={handleSortClick}
-        />
-        <ActionButton
-          text={t("sortDown")}
-          iconSrc={sortUp}
-          classNameIcon="action-btn__icon"
-          className="action-btn filter-btns__up"
-          dataType={TypeBtn.desk}
-          onClick={handleSortClick}
-        />
-        <ActionButton
-          text={t("addBtn")}
-          iconSrc={add}
-          classNameIcon="action-btn__icon"
-          className="action-btn filter-btns__add"
-          dataType={TypeBtn.addAcc}
-          onClick={onOpenAddAccount}
-        />
-        <ActionButton
-          text={t("updateAll")}
-          iconSrc={update}
-          classNameIcon="action-btn__icon"
-          className="action-btn filter-btns__update"
-          dataType={TypeBtn.updateAll}
-          onClick={handleSortClick}
-        />
-      </div>
+      {selectedAccounts.length > 0 ? (
+        <div className="filter-btns__filter-btns-wrap">
+          <ActionButton text={t("cancel")} classNameIcon="action-btn__icon" iconSrc={cancel} className="action-btn" onClick={handleCancel} />
+          <ActionButton text={t("delete")} classNameIcon="action-btn__icon" iconSrc={trash} className="action-btn" onClick={handleDelete} />
+        </div>
+      ) : (
+        <div className="filter-btns__filter-btns-wrap">
+          <ActionButton
+            text={t("sortUP")}
+            iconSrc={sortDown}
+            classNameIcon="action-btn__icon"
+            className="action-btn filter-btns__down"
+            dataType={TypeBtn.ask}
+            onClick={handleSortClick}
+          />
+          <ActionButton
+            text={t("sortDown")}
+            iconSrc={sortUp}
+            classNameIcon="action-btn__icon"
+            className="action-btn filter-btns__up"
+            dataType={TypeBtn.desk}
+            onClick={handleSortClick}
+          />
+          <ActionButton
+            text={t("addBtn")}
+            iconSrc={add}
+            classNameIcon="action-btn__icon"
+            className="action-btn filter-btns__add"
+            dataType={TypeBtn.addAcc}
+            onClick={onOpenAddAccount}
+          />
+          <ActionButton
+            text={t("updateAll")}
+            iconSrc={update}
+            classNameIcon="action-btn__icon"
+            className="action-btn filter-btns__update"
+            dataType={TypeBtn.updateAll}
+            onClick={handleSortClick}
+          />
+        </div>
+      )}
       {openPortal && <Portal children={<AddAccount />} onClose={onOpenAddAccount} />}
     </div>
   );
