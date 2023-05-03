@@ -18,7 +18,7 @@ const AppMenu = () => {
       <Link to="/" className="link-list app-menu__item">
         <ActionButton text={t("list")} iconSrc={list} className="nav-btn" />
       </Link>
-      <Link to="/" className="link-list app-menu__item">
+      <Link to="/calculator" className="link-list app-menu__item">
         <ActionButton text={t("calculator")} iconSrc={calculator} className="nav-btn" />
       </Link>
     </nav>
