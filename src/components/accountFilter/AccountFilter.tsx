@@ -1,6 +1,6 @@
 import { useState, useCallback } from "react";
 import { useSelector } from "react-redux";
-import { Portal } from "../portal/Portal";
+import { Modal } from "../modal/Modal";
 import AddAccount from "../addAccount/AddAccount";
 import ActionButton from "../actionButton/ActionButton";
 import { TypeBtn } from "../../utils/enum";
@@ -15,6 +15,7 @@ import update from "../../img/update.svg";
 import trash from "../../img/trash.svg";
 import cancel from "../../img/cancel.svg";
 import "./accountFilter.scss";
+import ToggleContent from "../toggleContent/ToggleContent";
 
 const AccountFilter = () => {
   const dispatch = useDispatch();
@@ -22,10 +23,6 @@ const AccountFilter = () => {
   const selectedAccounts = useSelector(accountSelected);
 
   const { t } = useTranslation();
-
-  const onOpenAddAccount = useCallback(() => {
-    setOpenPortal(!openPortal);
-  }, [openPortal]);
 
   const handleSortClick = useCallback(
     (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -72,13 +69,11 @@ const AccountFilter = () => {
             dataType={TypeBtn.desk}
             onClick={handleSortClick}
           />
-          <ActionButton
-            text={t("addBtn")}
-            iconSrc={add}
-            classNameIcon="action-btn__icon"
-            className="action-btn filter-btns__add"
-            dataType={TypeBtn.addAcc}
-            onClick={onOpenAddAccount}
+          <ToggleContent
+            toggle={(show) => (
+              <ActionButton text={t("addBtn")} iconSrc={add} classNameIcon="action-btn__icon" className="action-btn filter-btns__add" dataType={TypeBtn.addAcc} onClick={show} />
+            )}
+            content={(hide) => <Modal children={<AddAccount />} onClose={hide} />}
           />
           <ActionButton
             text={t("updateAll")}
@@ -90,7 +85,6 @@ const AccountFilter = () => {
           />
         </div>
       )}
-      {openPortal && <Portal children={<AddAccount />} onClose={onOpenAddAccount} />}
     </div>
   );
 };

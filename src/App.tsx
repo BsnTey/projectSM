@@ -8,6 +8,7 @@ import Profile from "./pages/profile/Profile";
 import "./App.css";
 
 const App = () => {
+  const isAuthenticated = true;
   const { t } = useTranslation();
   return (
     <Router>
@@ -19,7 +20,7 @@ const App = () => {
           <div className="app-body__section">
             <AppMenu />
             <Routes>
-              <Route element={<GuardedRoute />}>
+              <Route element={<GuardedRoute isRouteAccessible={isAuthenticated} />}>
                 <Route path={"/"} element={<AppAccounts />} />
                 <Route path={"/profile"} element={<Profile />} />
                 <Route path={"/calculator"} element={<Profile />} />

@@ -24,5 +24,13 @@
   "language": "Язык",
   "cancel": "Отменить",
   "delete": "Удалить",
-  "copy": "Скопировать"
+  "copy": "Скопировать",
+  "continue": "Продолжить",
+  "enterYourEmail": "Введите свой email",
+  "enterPassword": "Введите пароль",
+  "repeatPassword": "Повторите пароль",
+  "regAuth": "Вход или регистрация",
+  "reg": "Регистрация",
+  "auth": "Вход",
+  "forgotPassword": "Забыли пароль"
 }

@@ -1,19 +1,27 @@
 .add-form {
+  padding: 8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  // width: 100%;
+  min-width: 72rem;
   &__title {
     margin-bottom: 3.2rem;
     font-size: 2.8rem;
     text-align: start;
   }
-  &__input {
-    padding: 1.5rem 2rem;
-    border: 1px solid #e3e3e3;
+  &__text-area {
     font-size: 1.4rem;
-  }
-  &__form {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 100%;
+    flex-shrink: 0;
+    border: 0;
+    outline: 1px solid #e3e3e3;
+    padding: 10px 15px;
+    background-color: transparent;
+    color: #000;
+    font-family: inherit;
+    font-weight: 300;
+    min-width: 72rem;
+    min-height: 40rem;
   }
   &__input-wrap {
     display: flex;
@@ -32,14 +40,7 @@
     font-size: 1.4rem;
   }
   &__btn-add {
-    font-family: "GothamBook";
-    font-weight: 400;
-    padding: 1.5rem 5.2rem;
-    background-color: #1551e5;
-    font-size: 1.2rem;
-    line-height: 1.7rem;
-    color: white;
-    margin: 0 auto;
+    width: 100% !important;
   }
   &__main-input-wrap {
     display: flex;
@@ -53,85 +54,4 @@
     font-weight: 400;
     color: #939393;
   }
-}
-
-.add-form {
-  display: flex;
-  position: relative;
-  padding: 8rem;
-  background-color: #fff;
-  width: 56rem;
-  &__input {
-    padding: 1.5rem 2rem;
-    border: 1px solid #e3e3e3;
-    font-size: 1.4rem;
-  }
-  &__form {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 100%;
-  }
-  &__input-wrap {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    margin-bottom: 3rem;
-  }
-  &__btn-input {
-    font-family: "GothamProRegular";
-    padding: 1.5rem 2rem;
-    background-color: white;
-    border: 1px solid #e3e3e3;
-    font-size: 1.4rem;
-    text-align: start;
-    color: #e3e3e3;
-    font-size: 1.4rem;
-  }
-  &__btn-add {
-    font-family: "GothamBook";
-    font-weight: 400;
-    padding: 1.5rem 5.2rem;
-    background-color: #1551e5;
-    font-size: 1.2rem;
-    line-height: 1.7rem;
-    color: white;
-    margin: 0 auto;
-  }
-}
-
-.close-form {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 2rem;
-  height: 2rem;
-  position: absolute;
-  z-index: 10;
-  cursor: pointer;
-  top: 1.5rem;
-  right: 1.5rem;
-}
-.close-form::before {
-  content: "+";
-  color: black;
-  position: absolute;
-  z-index: 20;
-  transform: rotate(45deg);
-  font-size: 3rem;
-  line-height: 1;
-  transition: all 0.3s cubic-bezier(0.77, 0, 0.2, 0.85);
-}
-.close-form:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 100%;
-  background: black;
-  z-index: 10;
-  transition: all 0.3s cubic-bezier(0.77, 0, 0.2, 0.85);
-  transform: scale(0.01);
 }

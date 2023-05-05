@@ -24,5 +24,13 @@
   "language": "Language",
   "cancel": "Cancel",
   "delete": "Delete",
-  "copy": "Copy"
+  "copy": "Copy",
+  "continue": "Continue",
+  "enterYourEmail": "Enter your email",
+  "enterPassword": "Enter Password",
+  "repeatPassword": "Repeat Password",
+  "regAuth": "Login or Registration",
+  "reg": "Registration",
+  "auth": "Login",
+  "forgotPassword": "Forgot your password"
 }
