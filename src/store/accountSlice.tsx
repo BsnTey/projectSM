@@ -29,13 +29,14 @@ export const accountSlice = createSlice({
     },
     delSelectAccount: (state, action) => {
       const token = action.payload;
-      state.accountSelected = state.accountSelected.filter((account) => account !== token);
+      state.accountSelected = state.accountSelected.filter((selectToken) => selectToken !== token);
     },
     delAllSelectAccount: (state) => {
       state.accountSelected = [];
     },
     deleteSelected: (state) => {
       state.accountList = state.accountList.filter((account) => !state.accountSelected.includes(account.token));
+      state.accountSelected = [];
     },
   },
 });

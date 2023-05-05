@@ -1,10 +1,10 @@
-import { SVGProps } from "react";
+import { SVGProps, FC } from "react";
 interface IiconProps {
   iconSrc: React.ComponentType<SVGProps<SVGSVGElement>>;
   classNameIcon?: string;
 }
 
-const Icon: React.FC<IiconProps> = ({ iconSrc, classNameIcon }) => {
+const Icon: FC<IiconProps> = ({ iconSrc, classNameIcon }) => {
   const iconStyle = {
     backgroundImage: `url(${iconSrc})`,
     backgroundRepeat: "no-repeat",
