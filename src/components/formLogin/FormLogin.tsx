@@ -1,23 +1,25 @@
-import { Route, Routes, useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { ReactComponent as Logo } from "../../img/auth-logo.svg";
 import { useTranslation } from "react-i18next";
-import { useCallback, useState } from "react";
+import { useCallback, useState, FC, ReactNode } from "react";
 import ActionButton from "../actionButton/ActionButton";
 import RegInput from "../regInput/RegInput";
-import SignIn from "../signIn/SignIn";
-import Auth from "../auth/Auth";
 import { TypeRegStage } from "../../utils/enum";
-import "./login.scss";
+import Authorization from "../authorization/Authorization";
+// import Registration from "../registration/Registration";
+import "./formLogin.scss";
 
-const Login = () => {
+interface IFormLoginProps {
+  children?: ReactNode;
+}
+
+const FormLogin: FC<IFormLoginProps> = ({ children }) => {
   const { t } = useTranslation();
   const [regStage, setRegStage] = useState(TypeRegStage.regAuth);
-  const navigate = useNavigate();
 
   const handleContinue = useCallback(() => {
     setRegStage(TypeRegStage.auth);
-    navigate("/auth/register");
-  }, [navigate]);
+  }, []);
 
   return (
     <>
@@ -27,10 +29,9 @@ const Login = () => {
         <div className="login-body container-login">
           <div className="login-body__wrap">
             <RegInput title="E-mail" placeholder={t("enterYourEmail")} type="text" />
-            <Routes>
-              <Route path={"register"} element={<SignIn />} />
-              <Route path={"login"} element={<Auth />} />
-            </Routes>
+            {regStage === "auth" ? <Authorization /> : null}
+            {/* <Registration /> */}
+            {children}
           </div>
           <ActionButton text={t("continue")} className="action-btn login-body__btn action-btn--blue" onClick={handleContinue} />
         </div>
@@ -39,4 +40,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default FormLogin;

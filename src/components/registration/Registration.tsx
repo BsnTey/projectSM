@@ -1,8 +1,8 @@
 import { useTranslation } from "react-i18next";
 import RegInput from "../regInput/RegInput";
-import "./signIn.scss";
+import "./registration.scss";
 
-const SignIn = () => {
+const Registration = () => {
   const { t } = useTranslation();
   return (
     <>
@@ -16,4 +16,4 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+export default Registration;

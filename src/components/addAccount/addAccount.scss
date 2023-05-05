@@ -3,16 +3,25 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 100%;
+  // width: 100%;
+  min-width: 72rem;
   &__title {
     margin-bottom: 3.2rem;
     font-size: 2.8rem;
     text-align: start;
   }
-  &__input {
-    padding: 1.5rem 2rem;
-    border: 1px solid #e3e3e3;
+  &__text-area {
     font-size: 1.4rem;
+    flex-shrink: 0;
+    border: 0;
+    outline: 1px solid #e3e3e3;
+    padding: 10px 15px;
+    background-color: transparent;
+    color: #000;
+    font-family: inherit;
+    font-weight: 300;
+    min-width: 72rem;
+    min-height: 40rem;
   }
   &__input-wrap {
     display: flex;
@@ -31,14 +40,7 @@
     font-size: 1.4rem;
   }
   &__btn-add {
-    font-family: "GothamBook";
-    font-weight: 400;
-    padding: 1.5rem 5.2rem;
-    background-color: #1551e5;
-    font-size: 1.2rem;
-    line-height: 1.7rem;
-    color: white;
-    margin: 0 auto;
+    width: 100% !important;
   }
   &__main-input-wrap {
     display: flex;
