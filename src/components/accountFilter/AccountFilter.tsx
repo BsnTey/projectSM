@@ -5,7 +5,7 @@ import { Modal } from "../modal/Modal";
 import AddAccount from "../addAccount/AddAccount";
 import ActionButton from "../actionButton/ActionButton";
 import { TypeBtn } from "../../utils/enum";
-import { sortAccountList, deleteSelected, accountSelected, delAllSelectAccount } from "../../store/accountSlice";
+import { sortAccountList, deleteSelected, accountSelected, delAllSelectAccount, searchDisplayedAcc } from "../../store/accountSlice";
 import { useTranslation } from "react-i18next";
 import sortUp from "../../img/sortUp.svg";
 import filterSearch from "../../img/filter-search.svg";
@@ -38,11 +38,18 @@ const AccountFilter = () => {
     dispatch(delAllSelectAccount());
   }, [dispatch, selectedAccounts]);
 
-  console.log(selectedAccounts);
+  const handleChangeSearch = useCallback(
+    (event: React.ChangeEvent<HTMLInputElement>) => {
+      const text = event.currentTarget.value;
+      dispatch(searchDisplayedAcc(text));
+    },
+    [dispatch]
+  );
+
   return (
     <div className="filter-btns list-body__btns">
       <div className="filter-form filter-btns__input-form">
-        <input className="filter-form__input" placeholder="Искать" type="text" name="search" />
+        <input className="filter-form__input" placeholder="Искать" type="text" name="search" onChange={(e) => handleChangeSearch(e)} />
         <ActionButton iconSrc={filterSearch} className="search-form-btn" />
       </div>
       {selectedAccounts.length > 0 ? (

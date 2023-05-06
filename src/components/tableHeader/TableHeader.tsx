@@ -7,11 +7,17 @@ import "./tableHeader.scss";
 const TableHeader = () => {
   const { t } = useTranslation();
   let titles = useSelector(titleSelector);
-  titles = useMemo(() => [...titles, t("getCookie"), t("update")], [titles, t]);
+
+  titles = useMemo(() => {
+    if (!titles || titles.length === 0) {
+      return titles;
+    }
+    return [...titles, t("getCookie"), t("update")];
+  }, [titles, t]);
 
   return (
     <tr>
-      {titles.map((title) => (
+      {titles?.map((title) => (
         <th className="accounts-table__title">{t(title)}</th>
       ))}
     </tr>

@@ -15,15 +15,12 @@ const AddAccount = () => {
     const currentValue = textareaValue ? `${textareaValue}\n${event.clipboardData.getData("text")}` : event.clipboardData.getData("text");
 
     setTimeout(() => {
-      console.log(currentValue, "setTimeout");
       const newValue = currentValue.replace(/\s{2,}/g, "\n");
       setTextareaValue(newValue);
     }, 0);
   };
 
   const handleTextareaChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-    console.log("handleTextareaChange");
-    console.log(event.target.value);
     setTextareaValue(event.target.value);
   };
 
